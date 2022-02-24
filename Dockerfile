@@ -16,14 +16,14 @@ ARG TARGETOS
 ARG TARGETARCH
 
 # Build
-#RUN go build -o /docker-gs-ping
-RUN --mount=target=. \
-    --mount=type=cache,target=/root/.cache/go-build \
-    --mount=type=cache,target=/go/pkg \
-    GOOS=$TARGETOS GOARCH=$TARGETARCH go build -o /out/myapp .
+RUN go build -o /bitlife-dev-go .
+#RUN --mount=target=. \
+#    --mount=type=cache,target=/root/.cache/go-build \
+#    --mount=type=cache,target=/go/pkg \
+#    GOOS=$TARGETOS GOARCH=$TARGETARCH go build -o /bitlife-dev-go .
 
 FROM alpine
-COPY --from=build /out/myapp /bin
+COPY --from=build ./bitlife-dev-go /bin
 
 
 # This is for documentation purposes only.
@@ -38,4 +38,4 @@ COPY --from=build /out/myapp /bin
 #ENV HTTP_PORT=8081
 
 # Run
-CMD [ "/bin/myapp" ]
+CMD [ "/bin/bitlife-dev-go" ]
