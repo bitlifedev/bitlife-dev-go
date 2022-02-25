@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>BitLife-Dev</title>
+  <link rel="stylesheet" href="./css/background.css">
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+
+<body translate="no" >
+<div class="context">
+<!--div style="
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    border-radius: 25px;
+    background: #73AD21;
+    border: 3px solid green;
+    padding: 10px 50px;
+    ">-->
+
+        <h1>Welcome to BitLife-Dev</h1>
+
+    <form method="POST" action="/">
+        <label>Name: </label><input name="name" type="text" value="" />
+        <span><a href="#" onclick="this.closest('form').submit();return false;"></a></span>
+    </form>
+
+
+  </div>
+
+    <div class="background" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+    </div >
+
+  
+      <script id="rendered-js" >
+    </script>
+</body>
+
+</html>
+ 
